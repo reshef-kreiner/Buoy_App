@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    // in charge of the act of pointing at a specific activity"
+
+
+    //the color of the activity in the bar which we're on
+    <item
+        android:state_selected="true"
+        android:drawable="@color/white"
+        android:color="@color/red_app"/>
+
+
+    //the color of the activity in the bar which we're not on
+    <item
+        android:state_selected="false"
+        android:color="@color/gray_app"/>
+
+
+</selector>
