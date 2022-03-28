@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,21 +29,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        //setting up the action bar background
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.action_bar));
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+        //the app image for the action bar - start
+        actionBar.setDisplayShowCustomEnabled(true);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.header_image, null);
+        actionBar.setCustomView(view);
+
+
+
+        //recycler view object
         recyclerView = (RecyclerView)findViewById(R.id.homeRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
+        //connecting the recycler view to Firebase
         FirebaseRecyclerOptions<HomeModel> options =
                 new FirebaseRecyclerOptions.Builder<HomeModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("volunteers"), HomeModel.class)
                         .build();
-
         homeAdaptor = new HomeAdaptor(options);
         recyclerView.setAdapter(homeAdaptor);
 
+
+        //Bottom navigation bar
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.home);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
