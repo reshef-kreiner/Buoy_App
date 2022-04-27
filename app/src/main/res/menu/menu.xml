@@ -2,28 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/call"
-        android:title="call"
-        android:icon="@drawable/ic_call"/>
+        android:id="@+id/history"
+        android:icon="@drawable/ic_history"
+        android:title="היסטוריה" />
 
     <item
-        android:id="@+id/chat"
-        android:title="צ'אט"
-        android:icon="@drawable/ic_chat"/>
+        android:id="@+id/favorites"
+        android:icon="@drawable/ic_favorites"
+        android:title="מועדפים" />
 
     <item
         android:id="@+id/home"
-        android:title="בית"
-        android:icon="@drawable/ic_home"/>
+        android:icon="@drawable/ic_home"
+        android:title="בית" />
 
     <item
-        android:id="@+id/info"
-        android:title="מידע"
-        android:icon="@drawable/ic_info"/>
+        android:id="@+id/tips"
+        android:icon="@drawable/ic_tips"
+        android:title="טיפים" />
 
     <item
-        android:id="@+id/settings"
-        android:title="הגדרות"
-        android:icon="@drawable/ic_settings"/>
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile"
+        android:title="פרופיל" />
 
 </menu>

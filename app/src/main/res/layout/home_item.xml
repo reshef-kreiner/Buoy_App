@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="246dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="6dp"
     android:elevation="6dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="408dp"
+        android:layout_height="246dp"
         android:padding="15dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -46,10 +46,10 @@
 
         <TextView
             android:id="@+id/descriptionText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/img1"
-            android:layout_marginLeft="10dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="15dp"
             android:text="תיאור "
             android:textColor="@color/black"
@@ -57,34 +57,43 @@
 
         <TextView
             android:id="@+id/counterText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/descriptionText"
-            android:layout_marginLeft="10dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:text="עזרה ל128 נשים שונות "
+            android:text="סייעה כבר ל-128 אמהות"
             android:textColor="@color/black"
             android:textSize="10sp" />
 
-        //making like button toggle like
 
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleButtonGroup"
-            app:singleSelection="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/like_imageView"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="15dp">
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/like_picture_empty" />
 
-            <Button
-                android:id="@+id/like_btn"
-                style="@style/ToggleButtonWithIconOnly"
-                app:icon ="@drawable/ic_like_shape"
-                android:layout_width="39dp"
-                android:layout_height="33dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="16dp" />
-        </com.google.android.material.button.MaterialButtonToggleGroup>
+        <ImageView
+            android:id="@+id/chat_imageView"
+            android:layout_width="51dp"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:layout_toRightOf="@+id/call_imageView"
+            app:srcCompat="@drawable/ic_chat_icon" />
+
+        <ImageView
+            android:id="@+id/call_imageView"
+            android:layout_width="51dp"
+            android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            app:srcCompat="@drawable/ic_call_icon" />
 
 
     </RelativeLayout>

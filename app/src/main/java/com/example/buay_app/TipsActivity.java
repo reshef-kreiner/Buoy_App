@@ -12,14 +12,13 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class SettingsActivity extends AppCompatActivity {
-
+public class TipsActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_tips);
 
         //setting up the action bar background
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
@@ -33,9 +32,10 @@ public class SettingsActivity extends AppCompatActivity {
         actionBar.setCustomView(view);
 
 
+
         //Bottom navigation bar
         bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.settings);
+        bottomNavigationView.setSelectedItemId(R.id.tips);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -45,19 +45,19 @@ public class SettingsActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.settings:
+                    case R.id.tips:
                         return true;
 
-                    case R.id.chat:
-                        startActivity(new Intent(getApplicationContext(), ChatActivity.class));
+                    case R.id.favorites:
+                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.info:
-                        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
+                    case R.id.history:
+                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.call:
-                        startActivity(new Intent(getApplicationContext(), CallActivity.class));
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

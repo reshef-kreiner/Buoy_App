@@ -63,23 +63,23 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
                 {
-                    case R.id.call:
-                        startActivity(new Intent(getApplicationContext(), CallActivity.class));
+                    case R.id.history:
+                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.home:
                         return true;
 
-                    case R.id.chat:
-                        startActivity(new Intent(getApplicationContext(), ChatActivity.class));
+                    case R.id.favorites:
+                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.info:
-                        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
+                    case R.id.tips:
+                        startActivity(new Intent(getApplicationContext(), TipsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

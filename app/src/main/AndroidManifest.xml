@@ -15,16 +15,16 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoActivity"
+            android:name=".TipsActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".FavoritesActivity"
             android:exported="false" />
         <activity
-            android:name=".CallActivity"
+            android:name=".HistoryActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
