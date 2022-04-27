@@ -16,13 +16,14 @@
             android:id="@+id/img1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_alignParentRight="true"            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_launcher"
             app:civ_border_color="@color/white"
             app:civ_border_width="2dp" />
 
         <TextView
             android:id="@+id/nameText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@id/img1"
@@ -36,43 +37,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/nameText"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:layout_toLeftOf="@id/img1"
             android:text="כותרת"
             android:textColor="@color/gray_app"
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/descriptionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/descriptionText"
-            android:text="תיאור "
-            android:textSize="15sp"
-            android:textColor="@color/black"
             android:layout_below="@id/img1"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="15dp"
+            android:text="תיאור "
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/counterText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/counterText"
-            android:text="עזרה ל128 נשים שונות "
-            android:textSize="10sp"
-            android:textColor="@color/black"
             android:layout_below="@id/descriptionText"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:text="עזרה ל128 נשים שונות "
+            android:textColor="@color/black"
+            android:textSize="10sp" />
 
+        //making like button toggle like
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButtonGroup"
+            app:singleSelection="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp">
+
+            <Button
+                android:id="@+id/like_btn"
+                style="@style/ToggleButtonWithIconOnly"
+                app:icon ="@drawable/ic_like_shape"
+                android:layout_width="39dp"
+                android:layout_height="33dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
 
 
     </RelativeLayout>
-
-
-
-
-
 
 
 </androidx.cardview.widget.CardView>

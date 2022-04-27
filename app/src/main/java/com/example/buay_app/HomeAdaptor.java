@@ -3,7 +3,9 @@ package com.example.buay_app;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,6 +53,7 @@ public class HomeAdaptor extends FirebaseRecyclerAdapter<HomeModel,HomeAdaptor.m
     class myViewHolder extends RecyclerView.ViewHolder{
         CircleImageView img;
         TextView name, title, description, counter;
+        Button like_btn;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +62,16 @@ public class HomeAdaptor extends FirebaseRecyclerAdapter<HomeModel,HomeAdaptor.m
             title = (TextView) itemView.findViewById(R.id.titleText);
             description = (TextView) itemView.findViewById(R.id.descriptionText);
             //counter = (TextView) itemView.findViewById(R.id.counterText);
+
+            //the like button code:
+            like_btn = (Button) itemView.findViewById(R.id.like_btn);
+            like_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
         }
     }
 }

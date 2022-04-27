@@ -33,6 +33,7 @@ public class CallActivity extends AppCompatActivity {
         actionBar.setCustomView(view);
 
 
+
         //Bottom navigation bar
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.call);
