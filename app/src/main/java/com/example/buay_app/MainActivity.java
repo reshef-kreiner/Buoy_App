@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    HomeAdaptor homeAdaptor;
+    HomeAdapter homeAdaptor;
     RecyclerView recyclerView;
 
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 new FirebaseRecyclerOptions.Builder<HomeModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("volunteers"), HomeModel.class)
                         .build();
-        homeAdaptor = new HomeAdaptor(options);
+        homeAdaptor = new HomeAdapter(options);
         recyclerView.setAdapter(homeAdaptor);
 
 

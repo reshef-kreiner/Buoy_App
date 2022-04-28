@@ -3,10 +3,8 @@ package com.example.buay_app;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +15,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class HomeAdaptor extends FirebaseRecyclerAdapter<HomeModel,HomeAdaptor.myViewHolder>  {
+public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.myViewHolder>  {
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -25,7 +23,7 @@ public class HomeAdaptor extends FirebaseRecyclerAdapter<HomeModel,HomeAdaptor.m
      *
      * @param options
      */
-    public HomeAdaptor(@NonNull FirebaseRecyclerOptions<HomeModel> options) {
+    public HomeAdapter(@NonNull FirebaseRecyclerOptions<HomeModel> options) {
         super(options);
     }
 
