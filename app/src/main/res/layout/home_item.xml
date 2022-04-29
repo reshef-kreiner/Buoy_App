@@ -79,15 +79,21 @@
 
         <ImageView
             android:id="@+id/chat_imageView"
-            android:layout_width="51dp"
+            android:layout_width="71dp"
             android:layout_height="42dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="1dp"
             android:layout_toRightOf="@+id/call_imageView"
-            app:srcCompat="@drawable/ic_chat_icon" />
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_chat_icon"
+            android:clickable="true"
+            android:focusable="true"
+
+            />
 
         <ImageView
             android:id="@+id/call_imageView"
+            android:background="@color/white"
             android:layout_width="51dp"
             android:layout_height="42dp"
             android:layout_alignParentLeft="true"

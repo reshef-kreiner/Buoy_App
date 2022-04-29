@@ -1,11 +1,7 @@
 package com.example.buay_app;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,22 +10,15 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    HomeAdapter homeAdaptor;
-    RecyclerView recyclerView;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_chat);
 
         //setting up the action bar background
         androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
@@ -42,17 +31,6 @@ public class MainActivity extends AppCompatActivity {
         View view = inflater.inflate(R.layout.header_image, null);
         actionBar.setCustomView(view);
 
-        //recycler view object
-        recyclerView = (RecyclerView)findViewById(R.id.homeRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //connecting the recycler view to Firebase
-        FirebaseRecyclerOptions<HomeModel> options =
-                new FirebaseRecyclerOptions.Builder<HomeModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("volunteers"), HomeModel.class)
-                        .build();
-        homeAdaptor = new HomeAdapter(options);
-        recyclerView.setAdapter(homeAdaptor);
-
 
         //Bottom navigation bar
         bottomNavigationView = findViewById(R.id.bottom_navigator);
@@ -62,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
                 {
-                    case R.id.history:
-                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.home:
+                    case R.id.profile:
                         return true;
 
                     case R.id.favorites:
@@ -77,27 +55,13 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), TipsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    case R.id.history:
+                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
-
-
-    }
-
-    @Override
-    protected void onStart() {
-        homeAdaptor.startListening();
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        homeAdaptor.stopListening();
     }
 }

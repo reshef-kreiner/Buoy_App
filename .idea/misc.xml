@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_chat1.xml" value="0.234375" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_favorites.xml" value="0.25" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_profile.xml" value="0.234375" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/home_item.xml" value="0.264" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/tips_main_recycler_row_item.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/mr.smith/OneDrive - The Interdisciplinary Center Herzliya IDC/Desktop/Milab_App/app/src/main/res/drawable/action_bar.xml" value="0.22395833333333334" />
         <entry key="..\:/Users/mr.smith/OneDrive - The Interdisciplinary Center Herzliya IDC/Desktop/Milab_App/app/src/main/res/drawable/ic_call.xml" value="0.2015625" />
         <entry key="..\:/Users/mr.smith/OneDrive - The Interdisciplinary Center Herzliya IDC/Desktop/Milab_App/app/src/main/res/drawable/ic_chat.xml" value="0.2703125" />

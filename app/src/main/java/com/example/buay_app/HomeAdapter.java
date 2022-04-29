@@ -1,13 +1,20 @@
 package com.example.buay_app;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Context;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -64,7 +71,6 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.
             //counter = (TextView) itemView.findViewById(R.id.counterText);
 
 
-
             //the like image view "button"
             likeImageView = itemView.findViewById(R.id.like_imageView);
             likeImageView.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +83,16 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.
                         likeImageView.setImageResource(R.drawable.like_picture_empty);
                         isLiked = false;
                     }
+                }
+            });
+
+            //chat button
+            ImageView chatImageView = itemView.findViewById(R.id.chat_imageView);
+            chatImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    v.getContext().startActivity(new Intent(v.getContext(),ChatActivity.class));
+
                 }
             });
 
