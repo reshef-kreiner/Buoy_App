@@ -2,66 +2,175 @@ package com.example.buay_app;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 
 public class ChatActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
+    TabLayout tabLayout;
+    TabItem mchat,mcall,mstatus;
+    ViewPager viewPager;
+    PagerAdapter pagerAdapter;
+    androidx.appcompat.widget.Toolbar mtoolbar;
+
+    FirebaseAuth firebaseAuth;
+
+
+    FirebaseFirestore firebaseFirestore;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        //setting up the action bar background
-        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.action_bar));
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        tabLayout=findViewById(R.id.include);
+        mchat=findViewById(R.id.chat);
+        mcall=findViewById(R.id.calls);
+        mstatus=findViewById(R.id.status);
+        viewPager=findViewById(R.id.fragmentcontainer);
 
-        //the app image for the action bar - start
-        actionBar.setDisplayShowCustomEnabled(true);
-        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.header_image, null);
-        actionBar.setCustomView(view);
+        firebaseFirestore=FirebaseFirestore.getInstance();
+        firebaseAuth=FirebaseAuth.getInstance();
+
+        mtoolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(mtoolbar);
 
 
-        //Bottom navigation bar
-        bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.home);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        Drawable drawable= ContextCompat.getDrawable(getApplicationContext(),R.drawable.defualt_profile_pic);
+        mtoolbar.setOverflowIcon(drawable);
+
+
+        pagerAdapter= new  FragmentPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount()) {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.profile:
-                        return true;
+            public int getCount() {
+                return 0;
+            }
 
-                    case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.tips:
-                        startActivity(new Intent(getApplicationContext(), TipsActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.history:
-                        startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
+            @NonNull
+            @Override
+            public Fragment getItem(int position) {
+                return null;
+            }
+
+            @Override
+            public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
                 return false;
             }
+        };
+        viewPager.setAdapter(pagerAdapter);
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+
+                if(tab.getPosition()==0 || tab.getPosition()==1|| tab.getPosition()==2)
+                {
+                    pagerAdapter.notifyDataSetChanged();
+                }
+
+
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
         });
+
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+
+    }
+
+/*
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.profile:
+                Intent intent=new Intent(chatActivity.this,ProfileActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.settings:
+                Toast.makeText(getApplicationContext(),"Settign is clicked",Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+
+
+        return  true;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu,menu);
+
+
+        return true;
+    }
+*/
+    @Override
+    protected void onStop() {
+        super.onStop();
+        DocumentReference documentReference=firebaseFirestore.collection("Users").document(firebaseAuth.getUid());
+        documentReference.update("status","Offline").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(),"Now User is Offline",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        DocumentReference documentReference=firebaseFirestore.collection("Users").document(firebaseAuth.getUid());
+        documentReference.update("status","Online").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(),"Now User is Online",Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

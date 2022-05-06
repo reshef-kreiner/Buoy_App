@@ -7,18 +7,13 @@
     android:background="@color/app_background_default"
     tools:context=".HistoryActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="היסטוריה"
-        android:textColor="@color/red_app"
-        android:textSize="50dp"
-        android:textStyle="bold" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerview">
+    </androidx.recyclerview.widget.RecyclerView>
 
-
-    //the navigation bar settings
-
+    <!--the navigation bar settings-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigator"
         android:layout_width="match_parent"

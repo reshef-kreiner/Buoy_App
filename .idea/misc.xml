@@ -3,12 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1495" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_authentication.xml" value="0.19635416666666666" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_chat1.xml" value="0.234375" />
         <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_favorites.xml" value="0.25" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_history.xml" value="0.1" />
         <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_profile.xml" value="0.234375" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_main2.xml" value="0.25" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_otp_authentication.xml" value="0.264" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_set_profile.xml" value="0.2" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_specific_chat.xml" value="0.4" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_splash.xml" value="0.19635416666666666" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_tips.xml" value="0.1" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_try_chat.xml" value="0.23072916666666668" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/activity_update_profile.xml" value="0.1" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/category_row_items.xml" value="0.1" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/chatfragment.xml" value="0.2427536231884058" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/chatviewlayout.xml" value="0.23072916666666668" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/header_image.xml" value="0.2427536231884058" />
         <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/home_item.xml" value="0.264" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/message.xml" value="0.234375" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/messageme.xml" value="0.2203125" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/messageother.xml" value="0.264" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/recieverchatlayout.xml" value="0.2427536231884058" />
+        <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/senderchatlayout.xml" value="0.4" />
         <entry key="..\:/Users/hadar/AndroidStudioProjects/Buoy_App/app/src/main/res/layout/tips_main_recycler_row_item.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/mr.smith/OneDrive - The Interdisciplinary Center Herzliya IDC/Desktop/Milab_App/app/src/main/res/drawable/action_bar.xml" value="0.22395833333333334" />
         <entry key="..\:/Users/mr.smith/OneDrive - The Interdisciplinary Center Herzliya IDC/Desktop/Milab_App/app/src/main/res/drawable/ic_call.xml" value="0.2015625" />
