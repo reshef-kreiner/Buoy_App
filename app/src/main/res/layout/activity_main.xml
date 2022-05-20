@@ -53,9 +53,6 @@
         android:textSize="18dp"
         android:textStyle="bold"
         android:text="מה מעניין אותך?"
-
-
-
         />
 
     <TextView

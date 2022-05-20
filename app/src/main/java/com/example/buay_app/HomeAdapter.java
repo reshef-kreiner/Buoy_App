@@ -93,7 +93,7 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.
                     HomeModel homeModel = new HomeModel(name.toString(),title.toString(),description.toString(),img.toString(), Uid.toString());
                     intent.putExtra("name",homeModel.getName());
                     intent.putExtra("vurl",homeModel.getVurl());
-                    intent.putExtra("uid",homeModel.getUid());
+              //      intent.putExtra("uid",homeModel.getUid());
                     v.getContext().startActivity(intent);
                 }
             });

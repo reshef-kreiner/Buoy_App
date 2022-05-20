@@ -14,7 +14,7 @@ public class HomeModel {
         this.title = title;
         this.description = description;
         this.vurl = vurl;
-        this.Uid = Uid;
+     //   this.Uid = Uid;
     }
 
     public String getName() {
@@ -41,6 +41,6 @@ public class HomeModel {
     public void setVurl(String vurl) {
         this.vurl = vurl;
     }
-    public int getUid() {return Uid;}
-    public void setUid(String uid) {this.Uid = uid; }
+    public String getUid() {return Uid;}
+   // public void setUid(String uid) {this.Uid = uid; }
 }

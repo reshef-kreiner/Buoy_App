@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
+    android:layout_height="130dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardofchatuser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="-5dp">
+        android:paddingBottom="-5dp"
+        android:clickable="true"
+        android:focusable="true">
 
 
-        <TextView
-            android:id="@+id/nameofuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:text="Name Display Here"
-            android:textColor="#0b0b0b"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/imageviewofuser"
-            tools:layout_conversion_absoluteHeight="27dp"
-            tools:layout_conversion_absoluteWidth="173dp"
-            tools:layout_editor_absoluteY="16dp">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/statusofuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="22dp"
-            android:text="Discription Displays here"
-            android:textColor="#6a6a6a"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageviewofuser"
-            app:layout_constraintTop_toBottomOf="@+id/nameofuser"
-            tools:layout_conversion_absoluteHeight="16dp"
-            tools:layout_conversion_absoluteWidth="111dp">
-
-        </TextView>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#a6a6a6"
-            android:backgroundTint="#a6a6a6"
-            tools:layout_conversion_absoluteHeight="0dp"
-            tools:layout_conversion_absoluteWidth="382dp"
-            tools:layout_editor_absoluteX="20dp"
-            tools:layout_editor_absoluteY="5dp" />
+            android:layout_width="408dp"
+            android:layout_height="130dp"
+            android:padding="15dp">
 
-        <ImageView
-            android:id="@+id/imageviewofuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.111"
-            app:srcCompat="@mipmap/ic_launcher"
-            tools:layout_conversion_absoluteHeight="72dp"
-            tools:layout_conversion_absoluteWidth="72dp" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgChat"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="22dp"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/nameTextChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/imgChat"
+                android:text="שם המתנדבת"
+                android:textColor="@color/red_app"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/titleTextChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/nameTextChat"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="-26dp"
+                android:layout_toLeftOf="@id/imgChat"
+                android:text="כותרת"
+                android:textColor="@color/gray_app"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/like_imageView"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/like_picture_full" />
+        </RelativeLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
