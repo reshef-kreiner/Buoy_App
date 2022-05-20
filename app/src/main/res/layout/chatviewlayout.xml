@@ -58,6 +58,26 @@
                 android:textColor="@color/gray_app"
                 android:textSize="15sp" />
 
+
+            <TextView
+                android:id="@+id/descriptionTextChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleTextChat"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/idTextChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleTextChat"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
             <ImageView
                 android:id="@+id/like_imageView"
                 android:layout_width="32dp"

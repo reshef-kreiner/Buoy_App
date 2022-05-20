@@ -49,9 +49,10 @@ public class HistoryAdapter extends FirebaseRecyclerAdapter<HomeModel, HistoryAd
                 img = itemView.findViewById(R.id.imgChat);
                 name = (TextView) itemView.findViewById(R.id.nameTextChat);
                 title = (TextView) itemView.findViewById(R.id.titleTextChat);
-               // Uid = (TextView) itemView.findViewById(R.id.Uid);
+                description = (TextView) itemView.findViewById(R.id.descriptionTextChat);
+                Uid = (TextView) itemView.findViewById(R.id.idTextChat);
 
-                itemView.setOnClickListener(new View.OnClickListener() {
+                itemView.findViewById(R.id.cardofchatuser).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent=new Intent(v.getContext(),SpecificChat.class);
