@@ -15,13 +15,12 @@
         android:background="@color/red_app">
 
         <RelativeLayout
-            android:id="@+id/relativeLayout"
+            android:id="@+id/relativeLayoutSpecificChat"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/volProfile"
+                android:id="@+id/volImg"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentEnd="true"
@@ -36,13 +35,11 @@
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="-198dp"
                 android:layout_marginRight="10dp"
-
-
                 android:text="שם המתנדבת"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/volProfile"
+                app:layout_constraintEnd_toStartOf="@+id/volImg"
                 tools:layout_editor_absoluteY="13dp" />
         </RelativeLayout>
 
@@ -63,10 +60,10 @@
         android:id="@+id/getmessage"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_above="@+id/bottom_navigator"
         android:layout_marginLeft="55dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="7dp"
-        android:layout_above="@+id/bottom_navigator"
         android:hint="הקלידי כאן..."
         android:paddingLeft="20dp"
         android:paddingEnd="10dp"
@@ -81,11 +78,12 @@
         android:layout_height="45dp"
         android:layout_above="@+id/bottom_navigator"
         android:layout_alignLeft="@id/getmessage"
+        android:layout_marginLeft="-64dp"
+        android:layout_marginBottom="6dp"
         android:visibility="visible"
         app:srcCompat="@drawable/ic_send_message" />
 
     <!--the navigation bar settings-->
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigator"
         android:layout_width="match_parent"

@@ -9,11 +9,15 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,9 +37,11 @@ import java.util.Date;
 
 public class SpecificChat extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+
     EditText mgetmessage;
     ImageView msendmessagebutton;
-    ConstraintLayout msendmessagecardview;
+
+    RelativeLayout msendmessagecardview;
     androidx.appcompat.widget.Toolbar mtoolbarofspecificchat;
     ImageView mimageviewofspecificuser;
     TextView mnameofspecificuser;
@@ -46,6 +52,8 @@ public class SpecificChat extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     FirebaseDatabase firebaseDatabase;
     String senderroom,recieverroom;
+
+    ImageButton mbackbuttonofspecificchat;
 
     RecyclerView mmessagerecyclerview;
 
@@ -75,7 +83,7 @@ public class SpecificChat extends AppCompatActivity {
 
         //Bottom navigation bar
         bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+       // bottomNavigationView.setSelectedItemId(R.id.history);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -86,7 +94,6 @@ public class SpecificChat extends AppCompatActivity {
                         return true;
                     case R.id.profile:
                         return true;
-
                     case R.id.favorites:
                         startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                         overridePendingTransition(0, 0);
@@ -104,15 +111,13 @@ public class SpecificChat extends AppCompatActivity {
             }
         });
 
-        /*
-        //taking user info
         mgetmessage=findViewById(R.id.getmessage);
-        msendmessagecardview=findViewById(R.id.relativeLayout);
+        msendmessagecardview=findViewById(R.id.relativeLayoutSpecificChat);
         msendmessagebutton=findViewById(R.id.sendmessagebutton);
         mtoolbarofspecificchat=findViewById(R.id.toolbarofspecificchat);
         mnameofspecificuser=findViewById(R.id.volname);
-        midofspecificuser=findViewById(R.id.Uid);
-        mimageviewofspecificuser=findViewById(R.id.volProfile);
+        mimageviewofspecificuser=findViewById(R.id.volImg);
+        //mbackbuttonofspecificchat=findViewById(R.id.backbuttonofspecificchat);
 
         messagesArrayList=new ArrayList<>();
         mmessagerecyclerview=findViewById(R.id.recyclerviewofspecific);
@@ -123,19 +128,26 @@ public class SpecificChat extends AppCompatActivity {
         messagesAdapter=new MessagesAdapter(SpecificChat.this,messagesArrayList);
         mmessagerecyclerview.setAdapter(messagesAdapter);
 
-
         intent=getIntent();
-
+/*
+        setSupportActionBar(mtoolbarofspecificchat);
+        mtoolbarofspecificchat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Toolbar is Clicked",Toast.LENGTH_SHORT).show();
+            }
+        });
+*/
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
         calendar=Calendar.getInstance();
         simpleDateFormat=new SimpleDateFormat("hh:mm a");
 
-        msenderuid=firebaseAuth.getUid();
 
-        mrecieveruid=getIntent().getStringExtra("receiveruid");
+        msenderuid=firebaseAuth.getUid();
+        mrecieveruid=getIntent().getStringExtra("Uid");
         mrecievername=getIntent().getStringExtra("name");
-        //different chat rooms to receiver and sender
+
         senderroom=msenderuid+mrecieveruid;
         recieverroom=mrecieveruid+msenderuid;
 
@@ -158,6 +170,17 @@ public class SpecificChat extends AppCompatActivity {
             }
         });
 
+
+
+/*
+        mbackbuttonofspecificchat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+*/
+
         mnameofspecificuser.setText(mrecievername);
         String uri=intent.getStringExtra("vurl");
         if(uri.isEmpty()) {
@@ -165,9 +188,9 @@ public class SpecificChat extends AppCompatActivity {
         }
         else {
             Picasso.get().load(uri).into(mimageviewofspecificuser);
-       }
+        }
 
-        //click on send message, then sends the message to receiver
+
         msendmessagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -184,20 +207,20 @@ public class SpecificChat extends AppCompatActivity {
                             .child(senderroom)
                             .child("messages")
                             .push().setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            firebaseDatabase.getReference()
-                                    .child("chats")
-                                    .child(recieverroom)
-                                    .child("messages")
-                                    .push()
-                                    .setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
+                                    firebaseDatabase.getReference()
+                                            .child("chats")
+                                            .child(recieverroom)
+                                            .child("messages")
+                                            .push()
+                                            .setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                }
+                                            });
                                 }
                             });
-                        }
-                    });
                     mgetmessage.setText(null);
                 }
             }
@@ -213,10 +236,11 @@ public class SpecificChat extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
-        if(messagesAdapter!=null)
-        {
+        if(messagesAdapter!=null) {
             messagesAdapter.notifyDataSetChanged();
         }
-*/
     }
+
+
+
 }

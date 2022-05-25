@@ -14,7 +14,7 @@ public class HomeModel {
         this.title = title;
         this.description = description;
         this.vurl = vurl;
-     //   this.Uid = Uid;
+        this.Uid = uid;
     }
 
     public String getName() {

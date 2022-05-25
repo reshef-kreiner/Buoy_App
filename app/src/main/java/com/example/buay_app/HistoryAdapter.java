@@ -61,10 +61,8 @@ public class HistoryAdapter extends FirebaseRecyclerAdapter<HomeModel, HistoryAd
                         intent.putExtra("vurl",homeModel.getVurl());
                         //      intent.putExtra("uid",homeModel.getUid());
                         v.getContext().startActivity(intent);
-
                     }
                 });
-
             }
         }
     }
