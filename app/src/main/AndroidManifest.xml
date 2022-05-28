@@ -33,8 +33,9 @@
             android:name=".SpecificChat"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+            android:name=".SplashActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
@@ -45,9 +46,8 @@
             android:name=".FavoritesActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -22,10 +22,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="478dp"
         android:layout_below="@+id/whom_to_talk_to_text"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="0dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,11 +50,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/welcome_text"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="7dp"
+        android:text="מה מעניין אותך?"
         android:textColor="@color/black"
         android:textSize="18dp"
-        android:textStyle="bold"
-        android:text="מה מעניין אותך?"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/available_women_text"
@@ -61,9 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/what_interests_you"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="0dp"
-        android:text="יש עכשיו 15 נשים מוכשרות שזמינות עבורך"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="7dp"
+        android:text="יש עכשיו 6 בויות מוכשרות שזמינות עבורך,"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold" />
@@ -74,12 +76,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/available_women_text"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="-1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="7dp"
         android:text="עם מי תרצי לדבר?"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="405dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/what_interests_you"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="-20dp"
+        app:srcCompat="@drawable/ic_tags" />
 
 
 </RelativeLayout>
